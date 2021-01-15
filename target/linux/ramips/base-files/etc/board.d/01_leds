@@ -364,6 +364,10 @@ wndr3700v5)
 wt3020)
 	ucidef_set_led_default "power" "power" "$board:blue:power" "0"
 	;;
+xiaoyu-c5)
+	set_usb_led "xy:green:work"
+	ucidef_set_led_default "power" "POWER" "xy:green:sys" "1"
+	;;
 y1)
 	set_usb_led "$board:blue:usb"
 	ucidef_set_led_netdev "wifi" "WIFI" "$board:blue:wifi" "wlan1"

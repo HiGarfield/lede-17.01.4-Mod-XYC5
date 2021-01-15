@@ -625,6 +625,9 @@ ramips_board_detect() {
 	*"X8")
 		name="x8"
 		;;
+	*"XiaoYu-C5")
+		name="xiaoyu-c5"
+		;;
 	*"Y1")
 		name="y1"
 		;;

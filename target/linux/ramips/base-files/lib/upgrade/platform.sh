@@ -177,6 +177,7 @@ platform_check_image() {
 	wzr-agl300nh|\
 	x5|\
 	x8|\
+	xiaoyu-c5|\
 	y1|\
 	y1s|\
 	zbt-ape522ii|\
