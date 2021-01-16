@@ -22,14 +22,14 @@ default-settings ipset-lists luci \
 luci-app-ddns ddns-scripts_aliyun \
 luci-app-upnp luci-app-wizard \
 luci-app-ssr-pro luci-app-kcptun luci-app-udp2raw \
-luci-app-sfe luci-app-vlmcsd luci-app-wol luci-app-guest-wifi \
+luci-app-sfe luci-app-vlmcsd luci-app-wol \
 wpad dnsmasq-full luci-app-smartdns \
 iptables-mod-fullconenat \
 luci-app-autoreboot luci-app-adbyby-plus \
 luci-app-arpbind luci-app-eqos \
 luci-app-openvpn-server luci-app-pptp-server \
 luci-app-accesscontrol luci-app-cpulimit \
-luci-app-wifischedule luci-app-uhttpd xl2tpd \
+luci-app-uhttpd xl2tpd \
 luci-app-syncdial
 
 ifneq ($(_CONF_ROUTER_WITHOUT_USB_PORT_),1)
