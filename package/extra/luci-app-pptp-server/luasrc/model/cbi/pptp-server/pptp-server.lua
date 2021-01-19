@@ -4,7 +4,7 @@
 mp = Map("pptpd", "PPTP Server","")
 
 s = mp:section(NamedSection, "pptpd", "service", translate("PPTP Service"))
-s.anonymouse = true
+s.anonymous = true
 --s.addremove = true
 
 enabled = s:option(Flag, "enabled", translate("Enable"))
@@ -25,14 +25,19 @@ logging = s:option(Flag, "logwtmp", translate("Debug Logging"))
 logging.default = 0
 logging.rmempty = false
 
-logins = mp:section(NamedSection, "login", "login", translate("PPTP Logins"))
-logins.anonymouse = true
+logins = mp:section(TypedSection, "login", translate("PPTP Logins"))
+logins.anonymous = true
+logins.addremove = true
 
 username = logins:option(Value, "username", translate("User name"))
 username.datatype = "string"
+username.optional = false
+username.rmempty = false
 
 password = logins:option(Value, "password", translate("Password"))
 password.password = true
+password.optional = false
+password.rmempty = false
 
 function mp.on_save(self)
     require "luci.model.uci"
