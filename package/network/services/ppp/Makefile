@@ -242,8 +242,9 @@ define Package/ppp-mod-pppoe/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/rp-pppoe.so \
 		$(1)/usr/lib/pppd/$(PKG_VERSION)/
 	$(INSTALL_DIR) $(1)/etc/ppp/plugins
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/rp-pppoe.so \
-		$(1)/etc/ppp/plugins/
+	rm -f $(1)/etc/ppp/plugins/rp-pppoe.so
+	$(LN) /usr/lib/pppd/$(PKG_VERSION)/rp-pppoe.so \
+		$(1)/etc/ppp/plugins/rp-pppoe.so
 endef
 
 define Package/ppp-mod-radius/install
@@ -253,8 +254,9 @@ define Package/ppp-mod-radius/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/radattr.so \
 		$(1)/usr/lib/pppd/$(PKG_VERSION)/
 	$(INSTALL_DIR) $(1)/etc/ppp/plugins
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/radattr.so \
-		$(1)/etc/ppp/plugins/
+	rm -f $(1)/etc/ppp/plugins/radattr.so
+	$(LN) /usr/lib/pppd/$(PKG_VERSION)/radattr.so  \
+		$(1)/etc/ppp/plugins/radattr.so
 	$(INSTALL_DIR) $(1)/etc/ppp
 	$(INSTALL_DATA) ./files/etc/ppp/radius.conf $(1)/etc/ppp/
 	$(INSTALL_DIR) $(1)/etc/ppp/radius
