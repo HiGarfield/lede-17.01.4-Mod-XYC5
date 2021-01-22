@@ -132,8 +132,6 @@ define Package/rp-pppoe-server/install
 	$(INSTALL_DIR) $(1)/etc/ppp/plugins
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(CP) $(PKG_INSTALL_DIR)/usr/sbin/pppoe-server $(1)/usr/sbin/
-	[ -f $(1)/etc/ppp/plugins/rp-pppoe.so ] || \
-		$(CP) $(PKG_INSTALL_DIR)/etc/ppp/plugins/rp-pppoe.so $(1)/etc/ppp/plugins/
 	$(INSTALL_DATA) ./files/pppoe-server.default $(1)/etc/uci-defaults/
 endef
 

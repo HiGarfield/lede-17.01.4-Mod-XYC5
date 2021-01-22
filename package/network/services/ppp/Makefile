@@ -242,8 +242,7 @@ define Package/ppp-mod-pppoe/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/rp-pppoe.so \
 		$(1)/usr/lib/pppd/$(PKG_VERSION)/
 	$(INSTALL_DIR) $(1)/etc/ppp/plugins
-	[ -f $(1)/etc/ppp/plugins/rp-pppoe.so ] || \
-		$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/rp-pppoe.so \
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/rp-pppoe.so \
 		$(1)/etc/ppp/plugins/
 endef
 
@@ -254,7 +253,6 @@ define Package/ppp-mod-radius/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/radattr.so \
 		$(1)/usr/lib/pppd/$(PKG_VERSION)/
 	$(INSTALL_DIR) $(1)/etc/ppp/plugins
-	[ -f $(1)/etc/ppp/plugins/radattr.so ] || \
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/lib/pppd/$(PKG_VERSION)/radattr.so \
 		$(1)/etc/ppp/plugins/
 	$(INSTALL_DIR) $(1)/etc/ppp
